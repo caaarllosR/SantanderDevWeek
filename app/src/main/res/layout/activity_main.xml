@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -24,19 +24,30 @@
         android:layout_height="0dp"
         android:background="@color/redPrimary"
         app:layout_constraintDimensionRatio="16:6"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <TextView
+        android:id="@+id/tv_ola_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/ola_usuario"
+        android:layout_margin="16dp"
+        android:textColor="@android:color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
         android:id="@+id/tv_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Olá, Carlos"
-        android:layout_margin="16dp"
+        android:layout_marginLeft="6dp"
+        android:text="Carlos"
         android:textColor="@android:color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintStart_toEndOf="@id/tv_ola_usuario"
+        app:layout_constraintTop_toTopOf="@id/tv_ola_usuario" />
 
     <TextView
         android:id="@+id/tv_agencia"
@@ -111,7 +122,7 @@
                 android:text="R$ 7.000,00"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="4dp"
                 app:layout_constraintTop_toBottomOf="@id/tv_saldo_disponivel"
                 app:layout_constraintStart_toStartOf="@id/iv_saldo" />
 
@@ -125,6 +136,7 @@
                 app:layout_constraintStart_toStartOf="@id/tv_saldo" />
 
             <TextView
+                android:id="@+id/tv_limite"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -138,18 +150,21 @@
                 android:layout_height="1dp"
                 android:background="@android:color/darker_gray"
                 android:layout_margin="16dp"
-                app:layout_constraintTop_toBottomOf="@id/tv_saldo_limite" />
+                app:layout_constraintTop_toBottomOf="@id/tv_limite" />
 
             <TextView
                 android:id="@+id/tv_ver_extrato"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_ver_extrato"
+                android:textColor="@color/redSecundary"
+                android:textSize="16sp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/v_divider"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:textColor="@color/redSecundary" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/v_divider"
+                app:layout_constraintVertical_bias="0.35" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
